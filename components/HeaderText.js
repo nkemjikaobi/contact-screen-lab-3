@@ -1,8 +1,13 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
+import RegularText from './RegularText';
 
 const HeaderText = ({ children }) => {
-	return <div style={styles.header}>{children}</div>;
+	return (
+		<RegularText>
+			<Text style={styles.header}>{children}</Text>
+		</RegularText>
+	);
 };
 
 export default HeaderText;

@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 
 const RegularText = ({ children }) => {
-	return <div style={styles.regular}>{children}</div>;
+	return <Text style={styles.regular}>{children}</Text>;
 };
 
 export default RegularText;
