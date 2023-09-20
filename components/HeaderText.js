@@ -14,6 +14,7 @@ export default HeaderText;
 
 const styles = StyleSheet.create({
 	header: {
-		fontSize: 32,
+        fontSize: 32,
+        color: 'black'
 	},
 });

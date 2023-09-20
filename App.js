@@ -15,7 +15,7 @@ export default function App() {
 	};
 
 	const onSendHandler = () => {
-		Alert.alert('Contact Saved', 'Your details have been saved', [
+		Alert.alert('Contact Saved', `${firstName}, your details have been saved`, [
 			{ text: 'OK', onPress: () => onClearForm() },
 		]);
 	};
@@ -24,11 +24,11 @@ export default function App() {
 		<View style={styles.container}>
 			<HeaderText>Contact Keeper</HeaderText>
 
-			<View>
+			<View style={styles.inputWrapper}>
 				<View>
 					<RegularText>First Name</RegularText>
 					<TextInput
-						// style={styles.input}
+						style={styles.input}
 						onChangeText={onChangeFirstName}
 						value={firstName}
 						placeholder='Enter your first name'
@@ -37,7 +37,7 @@ export default function App() {
 				<View>
 					<RegularText>Last Name</RegularText>
 					<TextInput
-						// style={styles.input}
+						style={styles.input}
 						onChangeText={onChangeLastName}
 						value={lastName}
 						placeholder='Enter your last name'
@@ -46,7 +46,7 @@ export default function App() {
 				<View>
 					<RegularText>Email</RegularText>
 					<TextInput
-						// style={styles.input}
+						style={styles.input}
 						onChangeText={onChangeEmail}
 						value={email}
 						placeholder='Enter your email'
@@ -55,18 +55,22 @@ export default function App() {
 			</View>
 
 			<View style={styles.buttons}>
-				<Button
-					onPress={onSendHandler}
-					title='Send'
-					color='#841584'
-					accessibilityLabel='Send button'
-				/>
-				<Button
-					onPress={onClearForm}
-					title='Clear'
-					color='#841584'
-					accessibilityLabel='Clear button'
-				/>
+				<View style={styles.sendBtn}>
+					<Button
+						onPress={onSendHandler}
+						title='Send'
+						color='green'
+						accessibilityLabel='Send button'
+					/>
+				</View>
+				<View style={styles.clearBtn}>
+					<Button
+						onPress={onClearForm}
+						title='Clear'
+						color='#841584'
+						accessibilityLabel='Clear button'
+					/>
+				</View>
 			</View>
 		</View>
 	);
@@ -79,12 +83,28 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 	},
+	inputWrapper: {
+		marginTop: 40,
+	},
+	input: {
+		height: 40,
+		width: 200,
+		marginTop: 12,
+		marginBottom: 30,
+		borderWidth: 1,
+		padding: 10,
+		borderColor: 'green',
+		borderRadius: 10,
+	},
 	buttons: {
 		display: 'flex',
 		flexDirection: 'row',
 	},
 	clearBtn: {
-		marginLeft: 20,
+    marginLeft: 10,
+    width: 100
 	},
-	sendBtn: {},
+	sendBtn: {
+		width: 100,
+	},
 });
