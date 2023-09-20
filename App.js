@@ -1,8 +1,13 @@
 import { Button, StyleSheet, TextInput, View } from 'react-native';
 import HeaderText from './components/HeaderText';
 import RegularText from './components/RegularText';
+import { useState } from 'react';
 
 export default function App() {
+	const [firstName, onChangeFirstName] = useState('');
+	const [lastName, onChangeLastName] = useState('');
+	const [email, onChangeEmail] = useState('');
+
 	return (
 		<View style={styles.container}>
 			<HeaderText>Contact Keeper</HeaderText>
@@ -12,8 +17,8 @@ export default function App() {
 					<RegularText>First Name</RegularText>
 					<TextInput
 						// style={styles.input}
-						// onChangeText={onChangeText}
-						// value={text}
+						onChangeText={onChangeFirstName}
+						value={firstName}
 						placeholder='Enter your first name'
 					/>
 				</View>
@@ -21,8 +26,8 @@ export default function App() {
 					<RegularText>Last Name</RegularText>
 					<TextInput
 						// style={styles.input}
-						// onChangeText={onChangeText}
-						// value={text}
+						onChangeText={onChangeLastName}
+						value={lastName}
 						placeholder='Enter your last name'
 					/>
 				</View>
@@ -30,8 +35,8 @@ export default function App() {
 					<RegularText>Email</RegularText>
 					<TextInput
 						// style={styles.input}
-						// onChangeText={onChangeText}
-						// value={text}
+						onChangeText={onChangeEmail}
+						value={email}
 						placeholder='Enter your email'
 					/>
 				</View>
