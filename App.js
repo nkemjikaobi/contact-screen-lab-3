@@ -6,7 +6,13 @@ import { useState } from 'react';
 export default function App() {
 	const [firstName, onChangeFirstName] = useState('');
 	const [lastName, onChangeLastName] = useState('');
-	const [email, onChangeEmail] = useState('');
+  const [email, onChangeEmail] = useState('');
+  
+  const onClearForm = () => {
+    onChangeFirstName('')
+    onChangeLastName('')
+    onChangeEmail('')
+  }
 
 	return (
 		<View style={styles.container}>
@@ -50,7 +56,7 @@ export default function App() {
 					accessibilityLabel='Send button'
 				/>
 				<Button
-					// onPress={onPressLearnMore}
+					onPress={onClearForm}
 					title='Clear'
 					color='#841584'
 					accessibilityLabel='Clear button'
