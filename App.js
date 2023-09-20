@@ -1,4 +1,4 @@
-import { Button, StyleSheet, TextInput, View } from 'react-native';
+import { Alert, Button, StyleSheet, TextInput, View } from 'react-native';
 import HeaderText from './components/HeaderText';
 import RegularText from './components/RegularText';
 import { useState } from 'react';
@@ -6,13 +6,19 @@ import { useState } from 'react';
 export default function App() {
 	const [firstName, onChangeFirstName] = useState('');
 	const [lastName, onChangeLastName] = useState('');
-  const [email, onChangeEmail] = useState('');
-  
-  const onClearForm = () => {
-    onChangeFirstName('')
-    onChangeLastName('')
-    onChangeEmail('')
-  }
+	const [email, onChangeEmail] = useState('');
+
+	const onClearForm = () => {
+		onChangeFirstName('');
+		onChangeLastName('');
+		onChangeEmail('');
+	};
+
+	const onSendHandler = () => {
+		Alert.alert('Contact Saved', 'Your details have been saved', [
+			{ text: 'OK', onPress: () => onClearForm() },
+		]);
+	};
 
 	return (
 		<View style={styles.container}>
@@ -50,7 +56,7 @@ export default function App() {
 
 			<View style={styles.buttons}>
 				<Button
-					// onPress={onPressLearnMore}
+					onPress={onSendHandler}
 					title='Send'
 					color='#841584'
 					accessibilityLabel='Send button'
