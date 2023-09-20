@@ -37,7 +37,7 @@ export default function App() {
 				</View>
 			</View>
 
-			<View style>
+			<View style={styles.buttons}>
 				<Button
 					// onPress={onPressLearnMore}
 					title='Send'
@@ -62,4 +62,12 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 	},
+	buttons: {
+		display: 'flex',
+		flexDirection: 'row',
+	},
+	clearBtn: {
+		marginLeft: 20,
+	},
+	sendBtn: {},
 });
