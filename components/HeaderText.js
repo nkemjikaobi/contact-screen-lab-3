@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 const HeaderText = ({ children }) => {
-	return <div className={styles.header}>{children}</div>;
+	return <div style={styles.header}>{children}</div>;
 };
 
 export default HeaderText;
