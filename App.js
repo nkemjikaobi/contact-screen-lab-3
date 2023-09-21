@@ -1,4 +1,12 @@
-import { Alert, Button, StyleSheet, TextInput, View } from 'react-native';
+import {
+	Alert,
+	Button,
+	StyleSheet,
+	Text,
+	TextInput,
+	TouchableOpacity,
+	View,
+} from 'react-native';
 import HeaderText from './components/HeaderText';
 import RegularText from './components/RegularText';
 import { useState } from 'react';
@@ -63,13 +71,10 @@ export default function App() {
 						accessibilityLabel='Send button'
 					/>
 				</View>
-				<View style={styles.clearBtn}>
-					<Button
-						onPress={onClearForm}
-						title='Clear'
-						color='#841584'
-						accessibilityLabel='Clear button'
-					/>
+				<View>
+					<TouchableOpacity style={styles.clearBtn} onPress={onClearForm}>
+						<Text style={{ color: 'white' }}>Clear</Text>
+					</TouchableOpacity>
 				</View>
 			</View>
 		</View>
@@ -101,8 +106,12 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 	},
 	clearBtn: {
-    marginLeft: 10,
-    width: 100
+		marginLeft: 10,
+		width: 100,
+		backgroundColor: '#841584',
+		alignItems: 'center',
+		padding: 10,
+		borderRadius: 10,
 	},
 	sendBtn: {
 		width: 100,
